@@ -1,0 +1,220 @@
+.identificacao-page {
+  min-height: 100vh;
+  background: var(--color-background);
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+}
+/* Cabeçalho */
+
+.app-header {
+  width: 100%;
+  padding: 32px 48px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-primary);
+  color: white;
+
+  border-radius: 10px;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.logo p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Área central da identificação */
+
+.identificacao-container {
+  min-height: calc(100vh - 110px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+}
+
+.identificacao-card {
+  width: 100%;
+  max-width: 420px;
+
+  background: var(--color-card);
+
+  padding: 40px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.08);
+
+  text-align: center;
+}
+
+/* Ícone da identificação */
+
+.user-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e8efff;
+  border-radius: 50%;
+
+  font-size: 30px;
+}
+
+/* Título do card */
+
+.identificacao-card h2 {
+  margin: 0 0 10px;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+/* Texto de apresentação */
+
+.descricao {
+  margin: 0 0 28px;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: var(--color-text-secondary);
+}
+
+/* Formulário */
+
+.identificacao-card form {
+  text-align: left;
+}
+
+/* Label do campo */
+
+.identificacao-card label {
+  display: block;
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-text);
+}
+
+/* Campo de nome */
+
+.identificacao-card input {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 14px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.identificacao-card input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Botão Continuar */
+
+.identificacao-card button {
+  width: 100%;
+  height: 44px;
+
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--color-primary);
+  color: white;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s, transform 0.1s;
+}
+
+.identificacao-card button:hover {
+  background: #1d4ed8;
+}
+
+.identificacao-card button:active {
+  transform: scale(0.99);
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+  .app-header {
+    padding: 24px;
+  }
+
+  .logo h1 {
+    font-size: 21px;
+  }
+
+  .identificacao-container {
+    min-height: auto;
+    padding: 40px 20px;
+  }
+
+  .identificacao-card {
+    max-width: 100%;
+    padding: 30px 24px;
+  }
+
+  .identificacao-card h2 {
+    font-size: 24px;
+  }
+}
