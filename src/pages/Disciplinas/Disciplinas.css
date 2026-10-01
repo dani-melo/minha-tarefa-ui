@@ -1,0 +1,126 @@
+/* Container Principal da tela */
+.disciplinas-container {
+  padding: 32px;
+  max-width: 800px;
+  font-family: 'Inter', sans-serif;
+  color: #1F2937;
+}
+
+/* Botão de voltar */
+.btn-voltar {
+  background: none;
+  border: none;
+  color: #2563EB;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-voltar:hover {
+  text-decoration: underline;
+}
+
+/* Cabeçalho da página */
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1F2937;
+  margin: 0 0 4px 0;
+}
+
+.page-header p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #64748B;
+  margin: 0 0 24px 0;
+}
+
+/* Card do Formulário */
+.card-form-container {
+  background: #F8FAFC;
+  border: 1px solid #D7E0EF;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Campos de entrada e Rótulos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1F2937;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  height: 42px;
+  border: 1px solid #D7E0EF;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #FFFFFF;
+  color: #1F2937;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #2563EB;
+}
+
+.form-group input::placeholder {
+  color: #94A3B8;
+}
+
+/* Área dos Botões */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* Estilo do Botão Principal (Salvar) */
+.btn-primario {
+  background: #2563EB;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primario:hover {
+  background: #1D4ED8;
+}
+
+/* Estilo do Botão Secundário (Cancelar) */
+.btn-secundario {
+  background: #FFFFFF;
+  color: #1F2937;
+  border: 1px solid #D7E0EF;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background: #F1F5F9;
+}
