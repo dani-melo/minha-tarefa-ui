@@ -1,99 +1,125 @@
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
+import AppLayout from '../../layouts/AppLayout'
 import './Home.css'
 
-
 function Home() {
-    const navigate = useNavigate()
+  const location = useLocation()
+  const nome = location.state?.nome
+
+  const dataAtual = new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date())
+
   return (
-    <div className="home-page">
+    <AppLayout>
+      <div className="home-content">
 
-      <aside className="sidebar">
-        <div className="sidebar-logo">
-          <div className="sidebar-logo-icon">✓</div>
-          <h1>Minha Tarefa</h1>
-        </div>
+        <header className="home-header">
+          <div>
+            <h2>Olá, {nome}!👋</h2>
+            <p>Organize suas disciplinas e acompanhe suas tarefas.</p>
+          </div>
 
-        <nav className="sidebar-menu">
-          <NavLink
-            to="/inicio"
-            className={({ isActive }) => isActive ? 'active' : ''}
-         >
-            Início
-          </NavLink>
+          <span className="home-date">{dataAtual}</span>
+        </header>
 
-          <NavLink
-            to="/disciplinas"
-            className={({ isActive }) => isActive ? 'active' : ''}
-          >
-            Disciplinas
-          </NavLink>
+        <section className="acessos">
+          <NavLink to="/disciplinas" className="acesso-card">
+            <div className="acesso-icon">📖</div>
 
-          <NavLink
-            to="/tarefas"
-            className={({ isActive }) => isActive ? 'active' : ''}
-            >
-            Tarefas
-          </NavLink>
-        </nav>
-
-       <button
-         className="sair-button"
-         onClick={() => navigate('/')}
-       > 
-         Sair
-       </button>
-
-      </aside>
-
-      <main className="home-content">
-         <header className="home-header">
-            <div>
-                <h2>Olá!</h2>
-                <p>Organize suas disciplinas e tarefas acadêmicas.</p>
+            <div className="acesso-info">
+              <h3>Disciplinas</h3>
+              <p>Cadastre suas disciplinas e mantenha seus estudos organizados.</p>
+              <span className="acesso-link">Acessar</span>
             </div>
-         </header>
+          </NavLink>
 
-            <section className="resumo">
-                <div className="resumo-card">
-                    <h3>Disciplinas</h3>
-                    <p>0</p>
+          <NavLink to="/tarefas" className="acesso-card">
+            <div className="acesso-icon">📋</div>
+
+            <div className="acesso-info">
+              <h3>Tarefas</h3>
+              <p>
+                Organize suas tarefas e acompanhe seu progresso.
+              </p>
+              <span className="acesso-link">Acessar</span>
+            </div>
+          </NavLink>
+        </section>
+
+        <section className="resumo-section">
+          <h3 className="section-title">Resumo</h3>
+
+          <div className="resumo">
+
+            <div className="resumo-card">
+                <div className="resumo-icon">📖</div>
+
+                <div className="resumo-info">
+                <strong>0</strong>
+                <span>Disciplinas</span>
                 </div>
+            </div>
 
-                <div className="resumo-card">
-                    <h3>Tarefas pendentes</h3>
-                    <p>0</p>
+            <div className="resumo-card">
+                <div className="resumo-icon">📋</div>
+
+                <div className="resumo-info">
+                <strong>0</strong>
+                <span>Tarefas</span>
                 </div>
+            </div>
 
-                <div className="resumo-card">
-                    <h3>Tarefas concluídas</h3>
-                    <p>0</p>
+            <div className="resumo-card">
+                <div className="resumo-icon">⏰</div>
+
+                <div className="resumo-info">
+                <strong>0</strong>
+                <span>Pendentes</span>
                 </div>
-            </section>
+            </div>
 
-            <section className="acoes-rapidas">
-              <h3>Acesso rápido</h3>
-                <div className="acoes-container">
-                    <NavLink to="/disciplinas" className="acao-card">
-                        <span>＋</span>
-                        <div>
-                        <strong>Disciplinas</strong>
-                        <p>Cadastre e organize suas disciplinas.</p>
-                        </div>
-                    </NavLink>
+            <div className="resumo-card">
+                <div className="resumo-icon">✅</div>
 
-                    <NavLink to="/tarefas" className="acao-card">
-                        <span>✓</span>
-                        <div>
-                            <strong>Tarefas</strong>
-                            <p>Organize e acompanhe suas tarefas.</p>
-                        </div>
-                    </NavLink>
+                <div className="resumo-info">
+                <strong>0</strong>
+                <span>Concluídas</span>
                 </div>
-            </section>
+            </div>
 
-      </main>
+            </div>
+        </section>
 
-    </div>
+        <section className="proximas-tarefas">
+
+          <div className="section-header">
+            <h3 className="section-title">
+              Próximas tarefas
+            </h3>
+
+            <NavLink
+              to="/tarefas"
+              className="ver-todas"
+            >
+              Ver todas
+            </NavLink>
+          </div>
+
+          <div className="tarefas-vazio">
+            <div className="tarefas-vazio-icon">
+              📋
+            </div>
+
+            <p>Nenhuma tarefa cadastrada ainda.</p>
+          </div>
+
+        </section>
+
+      </div>
+    </AppLayout>
   )
 }
 

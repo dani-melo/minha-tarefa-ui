@@ -15,7 +15,7 @@ function Identificacao() {
       return
     }
 
-    navigate('/inicio')
+    navigate('/inicio', { state: { nome: nome.trim() } })
   }
 
   return (

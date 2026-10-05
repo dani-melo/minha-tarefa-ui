@@ -1,9 +1,7 @@
 .identificacao-page {
   min-height: 100vh;
-  background: var(--color-background);
-  font-family: 'Inter', sans-serif;
-  color: var(--color-text);
 }
+
 /* Cabeçalho */
 
 .app-header {
@@ -36,13 +34,16 @@
 
 .logo h1 {
   margin: 0;
+
   font-size: 24px;
   font-weight: 700;
+
   color: var(--color-primary);
 }
 
 .logo p {
   margin: 4px 0 0;
+
   font-size: 13px;
   color: var(--color-text-secondary);
 }
@@ -63,10 +64,9 @@
   width: 100%;
   max-width: 420px;
 
-  background: var(--color-card);
-
   padding: 40px;
 
+  background: var(--color-card);
   border: 1px solid var(--color-border);
   border-radius: 16px;
 
@@ -125,6 +125,7 @@
 
 .identificacao-card label {
   display: block;
+
   margin-bottom: 8px;
 
   font-size: 14px;
