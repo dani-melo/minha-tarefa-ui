@@ -1,0 +1,338 @@
+.detalhes-tarefa-content {
+  width: 100%;
+  padding: 40px;
+}
+
+/* Botão Voltar */
+
+.detalhes-voltar-button {
+  margin-bottom: 24px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: var(--color-text-secondary);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.detalhes-voltar-button:hover {
+  color: var(--color-primary);
+}
+
+/* Cabeçalho */
+
+.detalhes-tarefa-header {
+  margin-bottom: 24px;
+}
+
+.detalhes-tarefa-header h2 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+/* Card */
+
+.detalhes-tarefa-card {
+  width: 100%;
+
+  padding: 28px;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+/* Parte superior do card */
+
+.detalhes-card-topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.detalhes-card-topo h3 {
+  margin: 0 0 12px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: var(--color-text);
+}
+
+/* Status */
+
+.status-tarefa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.status-pendente {
+  background: #fee2e2;
+  color: var(--color-danger);
+}
+
+.status-em-andamento {
+  background: #fef3c7;
+  color: var(--color-warning);
+}
+
+.status-concluida {
+  background: #d1fae5;
+  color: var(--color-success);
+}
+
+/* Editar e Excluir */
+
+.detalhes-acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.editar-tarefa-button,
+.excluir-tarefa-button {
+  height: 40px;
+  padding: 0 14px;
+
+  border-radius: 8px;
+
+  background: var(--color-card);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.editar-tarefa-button {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.editar-tarefa-button:hover {
+  background: #f1f5f9;
+}
+
+.excluir-tarefa-button {
+  border: 1px solid #fecaca;
+  color: var(--color-danger);
+}
+
+.excluir-tarefa-button:hover {
+  background: #fee2e2;
+}
+
+/* Informações */
+
+.detalhes-informacoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  margin-bottom: 28px;
+}
+
+.detalhe-item span,
+.detalhe-descricao span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-text-secondary);
+}
+
+.detalhe-item p,
+.detalhe-descricao p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: var(--color-text);
+}
+
+/* Descrição */
+
+.detalhe-descricao {
+  padding-top: 24px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+/* Modal de confirmação da exclusão */
+
+.confirmacao-exclusao {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  z-index: 1000;
+}
+
+.confirmacao-exclusao-card {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 28px;
+
+  background: var(--color-card);
+  border-radius: 12px;
+
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+}
+
+.confirmacao-exclusao-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: var(--color-text);
+}
+
+.confirmacao-exclusao-card p {
+  margin: 0 0 24px;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: var(--color-text-secondary);
+}
+
+.confirmacao-exclusao-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancelar-exclusao-button,
+.confirmar-exclusao-button {
+  height: 40px;
+  padding: 0 16px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.cancelar-exclusao-button {
+  background: var(--color-card);
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+}
+
+.cancelar-exclusao-button:hover {
+  background: #f1f5f9;
+}
+
+.confirmar-exclusao-button {
+  background: var(--color-danger);
+  color: white;
+
+  border: 1px solid var(--color-danger);
+}
+
+.confirmar-exclusao-button:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .detalhes-tarefa-content {
+    padding: 24px 20px;
+  }
+
+  .detalhes-card-topo {
+    flex-direction: column;
+  }
+
+  .detalhes-informacoes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .detalhes-acoes {
+    width: 100%;
+  }
+
+  .editar-tarefa-button,
+  .excluir-tarefa-button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .detalhes-tarefa-content {
+    padding: 20px 16px;
+  }
+
+  .detalhes-tarefa-header h2 {
+    font-size: 24px;
+  }
+
+  .detalhes-tarefa-card {
+    padding: 20px 16px;
+  }
+
+  .detalhes-acoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  }
+
+  .status-tarefa,
+  .editar-tarefa-button,
+  .excluir-tarefa-button {
+   width: 100%;
+   padding: 0 8px;
+   white-space: nowrap;
+  }
+}

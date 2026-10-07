@@ -1,0 +1,234 @@
+.cadastro-tarefa-content {
+  width: 100%;
+  padding: 40px;
+}
+
+/* Botão Voltar */
+
+.voltar-button {
+  margin-bottom: 24px;
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: var(--color-text-secondary);
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.voltar-button:hover {
+  color: var(--color-primary);
+}
+
+/* Cabeçalho */
+
+.cadastro-tarefa-header {
+  margin-bottom: 24px;
+}
+
+.cadastro-tarefa-header h2 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+.cadastro-tarefa-header p {
+  margin: 0;
+
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+/* Formulário */
+
+.tarefa-form {
+  width: 100%;
+
+  padding: 28px;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+/* Campos */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-text);
+}
+
+.form-group label span {
+  color: var(--color-danger);
+}
+
+/* Inputs, textarea e selects */
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  background: var(--color-card);
+  color: var(--color-text);
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input,
+.form-group select {
+  height: 44px;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Quando o campo estiver selecionado */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Texto dos placeholders */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* Campos organizados em duas colunas */
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-row .form-group {
+  margin-bottom: 20px;
+}
+
+/* Ações do formulário */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 8px;
+}
+
+.cancelar-button,
+.salvar-button {
+  min-width: 110px;
+  height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.cancelar-button {
+  background: var(--color-card);
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+}
+
+.cancelar-button:hover {
+  background: #f1f5f9;
+}
+
+.salvar-button {
+  background: var(--color-primary);
+  color: white;
+
+  border: 1px solid var(--color-primary);
+}
+
+.salvar-button:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .cadastro-tarefa-content {
+    padding: 24px 20px;
+  }
+
+  .tarefa-form {
+    max-width: 100%;
+    padding: 22px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cadastro-tarefa-content {
+    padding: 20px 16px;
+  }
+
+  .tarefa-form {
+    padding: 20px 16px;
+  }
+
+  .cadastro-tarefa-header h2 {
+    font-size: 24px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancelar-button,
+  .salvar-button {
+    width: 100%;
+  }
+}

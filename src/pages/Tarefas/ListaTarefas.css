@@ -1,0 +1,200 @@
+.lista-tarefas-content {
+  width: 100%;
+  padding: 40px;
+}
+
+/* Cabeçalho */
+
+.lista-tarefas-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+
+  margin-bottom: 24px;
+}
+
+.lista-tarefas-header h2 {
+  margin: 0 0 8px;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: var(--color-text);
+}
+
+.lista-tarefas-header p {
+  margin: 0;
+
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+
+/* Botão Nova tarefa */
+
+.nova-tarefa-button {
+  padding: 12px 18px;
+
+  background: var(--color-primary);
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: background 0.2s;
+}
+
+.nova-tarefa-button:hover {
+  background: #1d4ed8;
+}
+
+/* Filtros */
+
+.tarefas-filtros {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+.tarefas-filtros input,
+.tarefas-filtros select {
+  width: 100%;
+  height: 44px;
+
+  padding: 0 14px;
+
+  background: var(--color-card);
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+}
+
+.tarefas-filtros input:focus,
+.tarefas-filtros select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.tarefas-filtros input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+/* Estado vazio da lista */
+
+.lista-tarefas-vazia {
+  width: 100%;
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 24px;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.lista-vazia-icon {
+  margin-bottom: 16px;
+
+  font-size: 40px;
+}
+
+.lista-tarefas-vazia h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  color: var(--color-text);
+}
+
+.lista-tarefas-vazia p {
+  max-width: 420px;
+  margin: 0 0 20px;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: var(--color-text-secondary);
+}
+
+.lista-vazia-button {
+  padding: 11px 18px;
+
+  background: var(--color-primary);
+  color: white;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: background 0.2s;
+}
+
+.lista-vazia-button:hover {
+  background: #1d4ed8;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .lista-tarefas-content {
+    padding: 24px 20px;
+  }
+
+  .lista-tarefas-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .tarefas-filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .nova-tarefa-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .lista-tarefas-vazia {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lista-tarefas-content {
+    padding: 20px 16px;
+  }
+
+  .lista-tarefas-header h2 {
+    font-size: 24px;
+  }
+
+  .lista-tarefas-vazia {
+    min-height: 260px;
+    padding: 32px 16px;
+  }
+}
+
