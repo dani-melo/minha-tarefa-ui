@@ -17,21 +17,22 @@ const disciplinasIniciais: Disciplina[] = [
 ];
 
 export const Disciplinas: React.FC = () => {
-  // Lista de disciplinas e busca
+  // Lista de disciplinas e filtro de busca
   const [disciplinas, setDisciplinas] = useState<Disciplina[]>(disciplinasIniciais);
   const [busca, setBusca] = useState('');
 
-  // Controle de exibição do formulário
+  // Controle do formulário de cadastro/edição
   const [exibindoFormulario, setExibindoFormulario] = useState(false);
-
-  // Guarda o ID da disciplina que está sendo editada (null = novo cadastro)
   const [idEmEdicao, setIdEmEdicao] = useState<string | null>(null);
 
   // Estados dos campos do formulário
   const [nome, setNome] = useState('');
   const [cargaHoraria, setCargaHoraria] = useState('');
 
-  // Abrir formulário limpo para Nova Disciplina (UI-03)
+  // ===== ESTADO PARA UI-06 (MODAL DE EXCLUSÃO) =====
+  const [disciplinaParaExcluir, setDisciplinaParaExcluir] = useState<Disciplina | null>(null);
+
+  // Abrir formulário para Nova Disciplina (UI-03)
   const handleAbrirCadastro = () => {
     setIdEmEdicao(null);
     setNome('');
@@ -39,7 +40,7 @@ export const Disciplinas: React.FC = () => {
     setExibindoFormulario(true);
   };
 
-  // Abrir formulário preenchido para Editar Disciplina (UI-05)
+  // Abrir formulário para Editar Disciplina (UI-05)
   const handleAbrirEdicao = (disciplina: Disciplina) => {
     setIdEmEdicao(disciplina.id);
     setNome(disciplina.nome);
@@ -47,7 +48,7 @@ export const Disciplinas: React.FC = () => {
     setExibindoFormulario(true);
   };
 
-  // Salvar (serve tanto para criar quanto para atualizar)
+  // Salvar Cadastro ou Edição
   const handleSalvar = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -57,7 +58,6 @@ export const Disciplinas: React.FC = () => {
     }
 
     if (idEmEdicao) {
-      // ===== LÓGICA DE EDIÇÃO (UI-05) =====
       setDisciplinas((prev) =>
         prev.map((item) =>
           item.id === idEmEdicao
@@ -67,7 +67,6 @@ export const Disciplinas: React.FC = () => {
       );
       alert('Disciplina atualizada com sucesso!');
     } else {
-      // ===== LÓGICA DE CADASTRO (UI-03) =====
       const novaDisciplina: Disciplina = {
         id: Date.now().toString(),
         nome,
@@ -78,7 +77,6 @@ export const Disciplinas: React.FC = () => {
       alert('Disciplina cadastrada com sucesso!');
     }
 
-    // Limpar estados e voltar para a listagem (UI-04)
     handleFecharFormulario();
   };
 
@@ -89,10 +87,21 @@ export const Disciplinas: React.FC = () => {
     setExibindoFormulario(false);
   };
 
-  // Exclusão rápida para manter a lista funcional
-  const handleExcluir = (id: string) => {
-    if (window.confirm('Deseja realmente excluir esta disciplina?')) {
-      setDisciplinas((prev) => prev.filter((item) => item.id !== id));
+  // ===== LÓGICA DE EXCLUSÃO (UI-06) =====
+  const handleAbrirModalExcluir = (disciplina: Disciplina) => {
+    setDisciplinaParaExcluir(disciplina);
+  };
+
+  const handleFecharModalExcluir = () => {
+    setDisciplinaParaExcluir(null);
+  };
+
+  const handleConfirmarExclusao = () => {
+    if (disciplinaParaExcluir) {
+      setDisciplinas((prev) =>
+        prev.filter((item) => item.id !== disciplinaParaExcluir.id)
+      );
+      setDisciplinaParaExcluir(null);
     }
   };
 
@@ -224,7 +233,7 @@ export const Disciplinas: React.FC = () => {
                     <button
                       className="btn-icon btn-excluir"
                       title="Excluir"
-                      onClick={() => handleExcluir(item.id)}
+                      onClick={() => handleAbrirModalExcluir(item)}
                     >
                       🗑️
                     </button>
@@ -232,6 +241,49 @@ export const Disciplinas: React.FC = () => {
                 </div>
               ))
             )}
+          </div>
+        </div>
+      )}
+
+      {/* ================= MODAL DE EXCLUSÃO (UI-06) ================= */}
+      {disciplinaParaExcluir && (
+        <div className="modal-overlay" onClick={handleFecharModalExcluir}>
+          <div
+            className="modal-container"
+            onClick={(e) => e.stopPropagation()} // Impede o fechamento ao clicar dentro do card do modal
+          >
+            <div className="modal-header">
+              <div className="modal-icon-danger">⚠️</div>
+              <h2>Excluir Disciplina</h2>
+            </div>
+
+            <div className="modal-body">
+              <p>
+                Tem certeza que deseja excluir a disciplina{' '}
+                <strong>"{disciplinaParaExcluir.nome}"</strong>?
+              </p>
+              <div className="alert-box-warning">
+                <strong>Atenção:</strong> A remoção desta disciplina impactará a
+                visualização das tarefas a ela vinculadas.
+              </div>
+            </div>
+
+            <div className="modal-actions">
+              <button
+                type="button"
+                className="btn-secundario"
+                onClick={handleFecharModalExcluir}
+              >
+                Cancelar
+              </button>
+              <button
+                type="button"
+                className="btn-perigo"
+                onClick={handleConfirmarExclusao}
+              >
+                Sim, Excluir
+              </button>
+            </div>
           </div>
         </div>
       )}
