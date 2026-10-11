@@ -16,21 +16,21 @@ function Sidebar() {
           to="/inicio"
           className={({ isActive }) => isActive ? 'active' : ''}
         >
-          Início
+          <span>🏠 Início</span>
         </NavLink>
 
         <NavLink
           to="/disciplinas"
           className={({ isActive }) => isActive ? 'active' : ''}
         >
-          Disciplinas
+          <span>📖 Disciplinas</span>
         </NavLink>
 
         <NavLink
           to="/tarefas"
           className={({ isActive }) => isActive ? 'active' : ''}
         >
-          Tarefas
+          <span>📋 Tarefas</span>
         </NavLink>
       </nav>
 
@@ -38,7 +38,7 @@ function Sidebar() {
         className="sair-button"
         onClick={() => navigate('/')}
       >
-        Sair
+        <span>🚪 Sair</span>
       </button>
     </aside>
   )

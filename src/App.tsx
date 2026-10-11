@@ -4,6 +4,7 @@ import Home from './pages/Home/Home'
 import CadastroTarefa from './pages/Tarefas/CadastroTarefa'
 import ListaTarefas from './pages/Tarefas/ListaTarefas'
 import DetalhesTarefa from './pages/Tarefas/DetalhesTarefa'
+import Disciplinas from './pages/Disciplinas/Disciplinas'
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Identificacao />} />
         <Route path="/inicio" element={<Home />} />
+
+        <Route path="/disciplinas" element={<Disciplinas />} />
+        <Route path="/disciplinas/nova" element={<Disciplinas />} />
+        <Route path="/disciplinas/:id/editar" element={<Disciplinas />} />
 
         <Route path="/tarefas/nova" element={<CadastroTarefa />} />
         <Route path="/tarefas" element={<ListaTarefas />} />

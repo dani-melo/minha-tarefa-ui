@@ -1,0 +1,368 @@
+
+.disciplinas-pagina {
+  width: 100%;
+  min-height: 100%;
+  padding: 30px 32px;
+  background: #f8faff;
+  color: #101c3c;
+  font-family: Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.disciplinas-pagina * {
+  box-sizing: border-box;
+}
+
+.disciplinas-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.disciplinas-topo h1,
+.disciplinas-cabecalho h1 {
+  margin: 0 0 5px;
+  font-size: 27px;
+  font-weight: 750;
+  color: #101a37;
+}
+
+.disciplinas-topo p,
+.disciplinas-cabecalho p {
+  margin: 0;
+  font-size: 14px;
+  color: #4c5e82;
+}
+
+.disciplinas-btn-nova,
+.disciplinas-btn-salvar {
+  background: #1046eb;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 13px 21px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.disciplinas-btn-nova:hover,
+.disciplinas-btn-salvar:hover {
+  background: #0938c9;
+}
+
+.disciplinas-filtros {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 14px;
+}
+
+.disciplinas-busca {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid #cbd7ef;
+  border-radius: 8px;
+  padding: 0 13px;
+  min-width: 0;
+}
+
+.disciplinas-busca span {
+  font-size: 23px;
+  color: #5473b1;
+}
+
+.disciplinas-busca input {
+  width: 100%;
+  height: 44px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #142346;
+  font-size: 13px;
+}
+
+.disciplinas-busca input::placeholder {
+  color: #7a8caf;
+}
+
+.disciplinas-filtros select {
+  width: 135px;
+  border: 1px solid #cbd7ef;
+  background: white;
+  border-radius: 8px;
+  color: #243d70;
+  padding: 0 12px;
+  font-size: 13px;
+  outline: none;
+}
+
+.disciplinas-lista {
+  background: white;
+  border: 1px solid #edf1f9;
+  border-radius: 14px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 18px rgba(31, 61, 118, 0.05);
+}
+
+.disciplinas-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e8eef8;
+}
+
+.disciplinas-item:last-child {
+  border-bottom: none;
+}
+
+.disciplinas-icone {
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+}
+
+.disciplinas-icone.azul {
+  background: #dce7ff;
+  color: #1454f5;
+}
+
+.disciplinas-icone.verde {
+  background: #d2f8e7;
+  color: #00a965;
+}
+
+.disciplinas-icone.roxo {
+  background: #e8d8ff;
+  color: #8b35ed;
+}
+
+.disciplinas-icone.laranja {
+  background: #fff0cc;
+  color: #f08b00;
+}
+
+.disciplinas-icone.rosa {
+  background: #ffe0ee;
+  color: #ed3490;
+}
+
+.disciplinas-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.disciplinas-info h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #101a37;
+  overflow-wrap: anywhere;
+}
+
+.disciplinas-metadados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 35px;
+  font-size: 12px;
+  color: #40547b;
+}
+
+.disciplinas-acoes {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.disciplinas-acoes button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disciplinas-btn-editar {
+  background: #f0f5ff;
+  color: #1646d2;
+  border-color: #e1eaff !important;
+}
+
+.disciplinas-btn-excluir {
+  background: #ffebee;
+  color: #f02f4a;
+  border-color: #ffe0e5 !important;
+}
+
+.disciplinas-acoes button:hover {
+  filter: brightness(0.95);
+}
+
+.disciplinas-vazio {
+  padding: 35px 15px;
+  text-align: center;
+  color: #71809d;
+  font-size: 14px;
+}
+
+/* FORMULÁRIO */
+
+.disciplinas-voltar {
+  border: none;
+  background: transparent;
+  color: #1648e8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 22px;
+}
+
+.disciplinas-cabecalho {
+  margin-bottom: 25px;
+}
+
+.disciplinas-formulario {
+  background: white;
+  border-radius: 15px;
+  padding: 28px 30px;
+  box-shadow: 0 4px 20px rgba(29, 60, 118, 0.06);
+  border: 1px solid #eef2f9;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-width: 760px;
+}
+
+.disciplinas-formulario label {
+  font-size: 14px;
+  font-weight: 650;
+  color: #172345;
+}
+
+.disciplinas-formulario label span {
+  color: #e62f47;
+}
+
+.disciplinas-formulario input {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #c9d5ec;
+  border-radius: 8px;
+  padding: 0 13px;
+  background: #fff;
+  color: #152343;
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.disciplinas-formulario input:focus {
+  border-color: #1648e8;
+  box-shadow: 0 0 0 3px rgba(22, 72, 232, 0.08);
+}
+
+.disciplinas-formulario input::placeholder {
+  color: #8292b0;
+}
+
+.disciplinas-acoes-formulario {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.disciplinas-btn-cancelar {
+  background: #f7f9fe;
+  color: #254276;
+  border: 1px solid #b9c9e9;
+  border-radius: 9px;
+  padding: 12px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.disciplinas-btn-salvar {
+  min-width: 120px;
+}
+
+.disciplinas-btn-salvar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.disciplinas-erro {
+  color: #c51d36;
+  background: #fff0f2;
+  border: 1px solid #ffd7de;
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .disciplinas-pagina {
+    padding: 20px 15px;
+  }
+
+  .disciplinas-topo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .disciplinas-topo h1,
+  .disciplinas-cabecalho h1 {
+    font-size: 23px;
+  }
+
+  .disciplinas-filtros {
+    flex-direction: column;
+  }
+
+  .disciplinas-filtros select {
+    width: 100%;
+    height: 44px;
+  }
+
+  .disciplinas-metadados {
+    gap: 4px 15px;
+  }
+
+  .disciplinas-item {
+    gap: 10px;
+  }
+
+  .disciplinas-icone {
+    width: 40px;
+    height: 40px;
+  }
+
+  .disciplinas-acoes {
+    gap: 5px;
+  }
+
+  .disciplinas-acoes button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .disciplinas-formulario {
+    padding: 22px 17px;
+  }
+}
