@@ -157,6 +157,98 @@
   background: #1d4ed8;
 }
 
+
+/* Lista de tarefas cadastradas */
+
+.tarefas-listagem {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Linha de cada tarefa */
+
+.tarefa-card {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+
+  padding: 16px 20px;
+
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+/* Informações da tarefa */
+
+.tarefa-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.tarefa-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Etiquetas de status */
+
+.tarefa-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-pendente {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-andamento {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-concluida {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Link para detalhes */
+
+.tarefa-card a {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tarefa-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade da listagem */
+
+@media (max-width: 768px) {
+  .tarefa-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px;
+  }
+}
+
+
+
 /* Responsividade */
 
 @media (max-width: 768px) {
@@ -197,4 +289,6 @@
     padding: 32px 16px;
   }
 }
+
+
 
