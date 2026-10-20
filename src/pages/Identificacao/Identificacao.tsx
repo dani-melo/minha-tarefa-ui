@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Identificacao.css'
+import { GoogleLogin } from '@react-oauth/google'
 
 
 function Identificacao() {
@@ -57,6 +58,43 @@ function Identificacao() {
               <span>→</span>
             </button>
           </form>
+          <div className="google-login">
+            <GoogleLogin
+              onSuccess={async (credentialResponse) => {
+                  try {
+                    const resposta = await fetch('http://localhost:3000/auth/google', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        credential: credentialResponse.credential,
+                      }),
+                    })
+
+                    const dados = await resposta.json()
+
+                    if (!resposta.ok) {
+                      throw new Error(dados.erro || 'Erro na autenticação')
+                    }
+
+                    console.log('Usuário autenticado:', dados.usuario)
+
+                      navigate('/inicio', {
+                        state: {
+                          nome: dados.usuario.nome,
+                        },
+                      })
+                  } catch (erro) {
+                    console.error('Erro ao autenticar:', erro)
+                    alert('Não foi possível concluir o login.')
+                  }
+                }}
+              onError={() => {
+                alert('Não foi possível entrar com Google.')
+              }}
+            />
+          </div>
         </div>
       </section>
     </main>
